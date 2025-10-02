@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "A script to fetch data and save to Supabase.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athipan1/Pai-Nai-Dee.git"
+  },
+  "keywords": [
+    "nodejs",
+    "supabase",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athipan1/Pai-Nai-Dee/issues"
+  },
+  "homepage": "https://github.com/athipan1/Pai-Nai-Dee#readme"
+}
