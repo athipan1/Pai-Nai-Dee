@@ -1,0 +1,24 @@
+name: Scheduled Data Fetch
+
+on:
+  schedule:
+    # กำหนดให้ทำงานทุกวัน เวลา 01:00 (ตี 1) ตามเวลาประเทศไทย
+    # ซึ่งเท่ากับ 18:00 UTC ของวันก่อนหน้า
+    - cron: '0 18 * * *'
+  workflow_dispatch: # เพิ่มปุ่มให้สามารถกดรันเองได้จากหน้า Actions บน GitHub
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest # ใช้เครื่อง virtual machine ของ GitHub ที่เป็น Ubuntu
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4 # ดึงโค้ดล่าสุดจาก repository ของคุณมาไว้ในเครื่อง runner
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4 # ติดตั้ง Node.js
+        with:
+          node-version: '20' # ระบุเวอร์ชันของ Node.js ที่จะใช้
+
+      - name: Run the data fetching script
+        run: node index.js # รันสคริปต์ของคุณ
